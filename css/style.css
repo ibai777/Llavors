@@ -42,6 +42,104 @@
   box-sizing: border-box;
 }
 
+/*  ----------------------------------NUESTRO CSS---------------------------------   */
+
+/* --- PARA LAS CARTAS DE LOS PROYECTOS --- */
+.container_p {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); 
+    width: 100%;
+}
+
+/* CARD */
+.equipo-card {
+    position: relative;
+    width: auto;
+    overflow: hidden;
+}
+
+ /* HOVER */
+.equipo-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    inset 0 0 15px rgba(0,0,0,.9),
+    0 10px 40px rgba(0,0,0,.7);
+}
+
+  /* IMAGEN */
+
+.equipo-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid #7b0000;
+  filter: contrast(1.05) brightness(.85) saturate(.85);
+}
+
+  /* NOMBRE */
+
+.equipo-card h3 {
+  font-size: .85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #A65800;
+  background: #111;
+  padding: .45rem 0;
+  border-top: 1px solid #3b2a1d;
+  margin: 0;
+}
+
+  /* PANEL INFO */
+
+.equipo-card .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,.85);
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility .3s ease;
+  padding: 1rem;
+}
+
+.equipo-card .info h3 {
+ text-decoration: uppercase;
+ margin-bottom: 2px;
+  font-size: clamp(20px, 1.5vw, 50px);
+}
+
+.equipo-card .info p {
+ text-decoration: uppercase;
+ margin-bottom: 2px;
+  font-size: clamp(18px, 1.5vw, 46px);
+}
+
+   /* MOSTRAR INFO */
+.equipo-card:hover .info {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- FIN PROYECTOS --- */
+/* --- DISABLE PARA EL BLOG --- */
+.disable {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.4;
+    text-decoration: none;
+    filter: grayscale(1)
+}
+
+
 html {
   font-family: sans-serif;
   line-height: 1.15;
