@@ -44,6 +44,10 @@
 
 /*  ----------------------------------NUESTRO CSS---------------------------------   */
 
+#lowrow {
+    bottom: 0;    
+}
+
 /* --- PARA LAS CARTAS DE LOS PROYECTOS --- */
 .container_p {
     display: grid;
@@ -569,6 +573,7 @@ h6, .h6 {
   font-size: 4.5rem;
   font-weight: 300;
   line-height: 1.2;
+  margin-bottom: 80px;
 }
 
 @media (max-width: 1200px) {
@@ -2498,9 +2503,9 @@ fieldset:disabled a.btn {
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #669928;
-  border-color: #A67500;
-  box-shadow: 0 0 0 0.2rem rgba(142, 194, 79, 0.5);
+  background-color: #FCEC8E;
+  border-color: #FCEC8E;
+  box-shadow: 0 0 0 0.2rem rgba(252, 236, 142, 0.5);
 }
 
 .btn-primary.disabled, .btn-primary:disabled {
@@ -2512,13 +2517,13 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #A67500;
-  border-color: #588423;
+  background-color: #FCEC8E;
+  border-color: #FCEC8E;
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 0.2rem rgba(142, 194, 79, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(252, 236, 142, 0.5);
 }
 
 .btn-secondary {
@@ -2751,7 +2756,7 @@ fieldset:disabled a.btn {
 
 .btn-dark:hover {
   color: #fff;
-  background-color: #0e0e0e;
+  background-color: #2A3D0B;
   border-color: #080808;
 }
 
@@ -6045,8 +6050,9 @@ a.close.disabled {
   width: 15%;
   color: #fff;
   text-align: center;
-  opacity: 0.5;
+  opacity: 0.8;
   transition: opacity 0.15s ease;
+  margin-top: 400px;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6076,8 +6082,9 @@ a.close.disabled {
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 60px;
+  height: 60px;
+  top: 0;
   background: no-repeat 50% / 100% 100%;
 }
 
