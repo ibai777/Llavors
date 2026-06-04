@@ -4698,6 +4698,7 @@ input[type="button"].btn-block {
 
 .pagination {
   display: flex;
+  justify-content: center;
   padding-left: 0;
   list-style: none;
 }
@@ -4801,7 +4802,7 @@ a.badge:hover, a.badge:focus {
 
 a.badge-primary:hover, a.badge-primary:focus {
   color: #fff;
-  background-color: #5f8f25;
+  background-color: #A67500;
 }
 
 a.badge-primary:focus, a.badge-primary.focus {
@@ -6228,7 +6229,7 @@ a.close.disabled {
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #5f8f25 !important;
+  background-color: #A67500 !important;
 }
 
 .bg-secondary {
@@ -9887,7 +9888,7 @@ h6,
   top: -15px;
   left: 0;
   border: 8px solid;
-  border-color: transparent #5f8f25 #5f8f25 transparent;
+  border-color: transparent #A67500 #A67500 transparent;
   z-index: -1;
 }
 
