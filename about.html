@@ -24,6 +24,28 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* Ocultamos la imagen por defecto */
+        #miImagen {
+            display: none;
+            width: 300px;
+            margin-top: 20px;
+        }
+        
+        #botonClicks {
+            background: none;        /* Elimina el fondo del botón */
+            border: none;            /* Elimina el borde */
+            padding: 0;              /* Elimina el espacio interno */
+            margin: 0;               /* Elimina márgenes */
+            font-family: inherit;    /* Hereda la tipografía de tu título o texto */
+            font-size: inherit;      /* Hereda el tamaño de fuente */
+            font-weight: inherit;    /* Hereda si está en negrita */
+            color: inherit;          /* Hereda el color del texto */
+            cursor: text;         /* Mantiene el ícono de mano al pasar por encima */
+        }
+
+    </style>
 </head>
 
 <body>
@@ -238,7 +260,8 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-4.jpg" alt="">
+                            <img class="img-fluid w-100" id="segundaImagen" src="img/team-4.jpg" alt="">
+                            <img class="img-fluid w-100" id="miImagen" src="img/El%20Rit%20logo.png" alt="Imagen secreta">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -247,7 +270,47 @@
                             </div>
                         </div>
                         <div class="text-center py-4">
-                            <h5 class="text-truncate">Guide Name</h5>
+                            <h5 class="text-truncate"><button id="botonClicks">Guide Name</button></h5>
+                            <body>
+<script>
+    let clicks = 0;
+    let tiempoLimite = 4000; // Tiempo límite en milisegundos
+    let temporizador;
+
+    const boton = document.getElementById('botonClicks');
+    const imagen1 = document.getElementById('miImagen');
+    const imagen2 = document.getElementById('segundaImagen'); // Reemplaza con el ID de tu otra imagen
+
+    boton.addEventListener('click', () => {
+        // Aumentamos el contador de clics
+        clicks++;
+
+        // Si es el primer clic, iniciamos el temporizador
+        if (clicks === 1) {
+            temporizador = setTimeout(() => {
+                // Pasado el tiempo límite, si no se cumplió el objetivo, reiniciamos
+                clicks = 0;
+            }, tiempoLimite);
+        }
+
+        // Si el usuario llega a 10 clics dentro del tiempo establecido
+        if (clicks === 10) {
+            // Cancelamos el temporizador para que no se reinicie
+            clearTimeout(temporizador);
+            
+            // Mostramos la primera imagen
+            imagen1.style.display = 'block';
+            
+            // Ocultamos la segunda imagen
+            imagen2.style.display = 'none';
+            
+            // Reiniciamos los clics por si quieren volver a hacerlo
+            clicks = 0;
+        }
+    });
+</script>
+
+
                             <p class="m-0">Designation</p>
                         </div>
                     </div>
