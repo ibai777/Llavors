@@ -30,8 +30,12 @@
         #miImagen {
             display: none;
             width: 300px;
-            margin-top: 20px;
         }
+        
+#terceraImagen {
+            display: none;
+            width: 300px;
+        }        
         
         #botonClicks {
             background: none;        /* Elimina el fondo del botón */
@@ -209,7 +213,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/candy.jpg" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -226,7 +230,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-2.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/javier-prey.jpg" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -243,7 +247,7 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-3.jpg" alt="">
+                            <img class="img-fluid w-100" src="img/helen.jpg" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -260,8 +264,9 @@
                 <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" id="segundaImagen" src="img/team-4.jpg" alt="">
-                            <img class="img-fluid w-100" id="miImagen" src="img/El%20Rit%20logo.png" alt="Imagen secreta">
+                            <img class="img-fluid w-100" id="terceraImagen" src="img/vic2.jpeg" alt="">
+                            <img class="img-fluid w-100" id="segundaImagen" src="img/victor.jpg" alt="">
+                            <img class="img-fluid w-100" id="miImagen" src="img/vic1.png" alt="Imagen secreta">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
@@ -273,46 +278,276 @@
                             <h5 class="text-truncate"><button id="botonClicks">Guide Name</button></h5>
                             <body>
 <script>
-    let clicks = 0;
-    let tiempoLimite = 4000; // Tiempo límite en milisegundos
-    let temporizador;
+  let clicks = 0;
+  let temporizador;
+  
+  // Configuración del Primer Reto
+  const clicksReto1 = 10;
+  const tiempoReto1 = 4000; // 4 segundos
+  
+  // Configuración del Segundo Reto (Nuevo)
+  const clicksReto2 = 20;
+  const tiempoReto2 = 8000; // 8 segundos
+  
+  // Estado del juego
+  let reto1Completado = false;
 
-    const boton = document.getElementById('botonClicks');
-    const imagen1 = document.getElementById('miImagen');
-    const imagen2 = document.getElementById('segundaImagen'); // Reemplaza con el ID de tu otra imagen
+  const boton = document.getElementById('botonClicks');
+  const imagen1 = document.getElementById('miImagen');       // Imagen oculta que aparece
+  const imagen2 = document.getElementById('segundaImagen');  // Imagen que se oculta
+  const imagen3 = document.getElementById('terceraImagen');  // Nueva imagen para el final
 
-    boton.addEventListener('click', () => {
-        // Aumentamos el contador de clics
-        clicks++;
+  boton.addEventListener('click', () => {
+    clicks++;
 
-        // Si es el primer clic, iniciamos el temporizador
-        if (clicks === 1) {
-            temporizador = setTimeout(() => {
-                // Pasado el tiempo límite, si no se cumplió el objetivo, reiniciamos
-                clicks = 0;
-            }, tiempoLimite);
-        }
+    // --- LÓGICA DEL RETO 1 (10 clics / 4 seg) ---
+    if (!reto1Completado) {
+      if (clicks === 1) {
+        temporizador = setTimeout(() => {
+          clicks = 0;
+        }, tiempoReto1);
+      }
 
-        // Si el usuario llega a 10 clics dentro del tiempo establecido
-        if (clicks === 10) {
-            // Cancelamos el temporizador para que no se reinicie
-            clearTimeout(temporizador);
-            
-            // Mostramos la primera imagen
-            imagen1.style.display = 'block';
-            
-            // Ocultamos la segunda imagen
-            imagen2.style.display = 'none';
-            
-            // Reiniciamos los clics por si quieren volver a hacerlo
-            clicks = 0;
-        }
-    });
+      if (clicks === clicksReto1) {
+        clearTimeout(temporizador);
+        
+        // Acciones visuales: Aparece la imagen oculta
+        imagen1.style.display = 'block';
+        imagen2.style.display = 'none';
+        
+        // Cambiamos el estado para activar el siguiente reto
+        reto1Completado = true;
+        clicks = 0; // Reiniciamos el contador para el Reto 2
+      }
+    }
+    
+    // --- LÓGICA DEL RETO 2 (20 clics / 8 seg) ---
+    else {
+      if (clicks === 1) {
+        temporizador = setTimeout(() => {
+          clicks = 0;
+        }, tiempoReto2);
+      }
+
+      if (clicks === clicksReto2) {
+        clearTimeout(temporizador);
+        
+        // Acciones al completar el segundo reto (ejemplo: mostrar imagen 3)
+        if (imagen3) imagen3.style.display = 'block';
+                     imagen1.style.display = 'none';
+        
+        // Si quieres que el bucle se repita infinitamente en el Reto 2:
+        clicks = 0; 
+      }
+    }
+  });
 </script>
-
 
                             <p class="m-0">Designation</p>
                         </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/raquel.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Guide Name</h5>
+                            <p class="m-0">Designation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/coven.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Guide Name</h5>
+                            <p class="m-0">Designation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/ferran.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Guide Name</h5>
+                            <p class="m-0">Designation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/olga.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Guide Name</h5>
+                            <p class="m-0">Designation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/m-angelica.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Guide Name</h5>
+                            <p class="m-0">Designation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/jeremias.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Guide Name</h5>
+                            <p class="m-0">Designation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/riquelme.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Guide Name</h5>
+                            <p class="m-0">Designation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/romualda.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Guide Name</h5>
+                            <p class="m-0">Designation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/leire.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Guide Name</h5>
+                            <p class="m-0">Designation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/ibai.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Guide Name</h5>
+                            <p class="m-0">Designation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/silvia.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Guide Name</h5>
+                            <p class="m-0">Designation</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/alba.jpg" alt="">
+                            <img class="img-fluid w-100" id="segundaImagen" src="img/team-4.jpg" alt="">
+                            <img class="img-fluid w-100" id="miImagen" src="img/El%20Rit%20logo.png" alt="Imagen secreta">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
                     </div>
                 </div>
             </div>
