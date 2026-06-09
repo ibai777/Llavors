@@ -43,6 +43,13 @@
 }
 
 /*  ----------------------------------NUESTRO CSS---------------------------------   */
+/* --- OCULTAR NOTICIAS TAG BLOG --- */
+.blog-item.oculto {
+    display: none;
+}
+
+*/ ------ */
+
 .enlace-articulo {
     display: block;
     text-decoration: none; 
