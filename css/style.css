@@ -9748,30 +9748,29 @@ h6,
   }
 }
 
-.page-header {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/foto equipo.jpg), no-repeat center center;
-  background-size: cover;
-  background-size: cover;
+.page-header-equipo {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/fondo-equipo.png), no-repeat center center;
+  background-size: contain;
+  margin-top: -42px;
 }
 
 .page-header-proyectos {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-2.jpg), no-repeat center center;
-  background-size: cover;
-}
-
-.page-header-equipo {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-2.jpg), no-repeat center center;
-  background-size: cover;
-}
-
-.page-header-servicios {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-2.jpg), no-repeat center center;
-  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bannerproyectos.jpg), no-repeat center center;
+  background-size: contain;
+  margin-top: -42px;
 }
 
 .page-header-blog {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-2.jpg), no-repeat center center;
-  background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bannerblog.jpg), no-repeat center center;
+  background-size: contain;
+  margin-top: -42px;
+  filter: brightness(0.8);
+}
+
+.page-header-servicios {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bannerservicios.jpg), no-repeat center center;
+  background-size: contain;
+  margin-top: -42px;
 }
 
 .destination-item img {
