@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Segona Oportunitat — Nota de Premsa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --background:#f5f0e8;
+    --paper:#faf7f2;
+    --brown:#5a3d2b;
+    --brown-light:#8b6a4e;
+    --gold:#b28a5a;
+    --text:#2f2a27;
+    --border:#ddd2c5;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--background);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.8;
+}
+
+.hero{
+
+    min-height:85vh;
+
+    background:
+    linear-gradient(
+        rgba(40,25,15,.45),
+        rgba(40,25,15,.65)
+    ),
+    url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1800&q=80');
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:end;
+}
+
+.hero-content{
+    max-width:1200px;
+    margin:auto;
+    width:90%;
+    padding-bottom:7rem;
+    color:white;
+}
+
+.kicker{
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:.85rem;
+    opacity:.85;
+    margin-bottom:1rem;
+}
+
+.hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(3rem,7vw,6rem);
+    line-height:1;
+    margin-bottom:1.5rem;
+}
+
+.hero p{
+    max-width:700px;
+    font-size:1.2rem;
+    font-weight:300;
+}
+
+.article{
+    max-width:1300px;
+    margin:auto;
+    width:90%;
+    padding:6rem 0;
+}
+
+.meta{
+    display:flex;
+    gap:2rem;
+    margin-bottom:4rem;
+    color:var(--brown-light);
+    font-size:.95rem;
+}
+
+.content-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:5rem;
+}
+
+.article-body{
+    font-size:1.1rem;
+}
+
+.article-body p{
+    margin-bottom:2rem;
+}
+
+.article-body p:first-of-type{
+    font-size:1.25rem;
+    color:var(--brown);
+}
+
+.pullquote{
+    margin:4rem 0;
+    padding:2rem;
+    border-left:4px solid var(--gold);
+    background:var(--paper);
+    font-family:'Cormorant Garamond',serif;
+    font-size:2rem;
+    color:var(--brown);
+}
+
+.sidebar{
+    position:sticky;
+    top:50px;
+    height:fit-content;
+}
+
+.card{
+    background:var(--paper);
+    border:1px solid var(--border);
+    padding:2rem;
+    margin-bottom:2rem;
+}
+
+.card h3{
+    margin-bottom:1rem;
+    color:var(--brown);
+    font-size:1rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.data{
+    margin-bottom:1rem;
+}
+
+.data strong{
+    display:block;
+    color:var(--brown);
+}
+
+.highlight{
+    background:var(--brown);
+    color:white;
+    padding:3rem;
+    margin:5rem 0;
+}
+
+.highlight h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:3rem;
+    margin-bottom:1rem;
+}
+
+.footer-contact{
+    margin-top:5rem;
+    padding-top:3rem;
+    border-top:1px solid var(--border);
+}
+
+.footer-contact h3{
+    margin-bottom:1rem;
+    color:var(--brown);
+}
+
+@media(max-width:900px){
+
+.content-grid{
+    grid-template-columns:1fr;
+}
+
+.sidebar{
+    position:static;
+}
+
+.hero{
+    min-height:65vh;
+}
+
+}
+
+    .festival-section{
+
+    display:grid;
+    grid-template-columns:380px 1fr;
+    gap:4rem;
+
+    align-items:center;
+
+    margin:6rem 0;
+    padding:3rem;
+
+    background:var(--paper);
+    border:1px solid var(--border);
+}
+
+.festival-poster img{
+
+    width:100%;
+    display:block;
+
+    border-radius:4px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.15);
+}
+
+.festival-label{
+
+    display:inline-block;
+
+    margin-bottom:1rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:3px;
+
+    font-size:.8rem;
+
+    color:var(--gold);
+}
+
+.festival-content h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:4rem;
+
+    line-height:1;
+
+    color:var(--brown);
+
+    margin-bottom:1.5rem;
+}
+
+.festival-content p{
+
+    margin:0;
+    max-width:700px;
+}
+
+@media(max-width:900px){
+
+    .festival-section{
+
+        grid-template-columns:1fr;
+        gap:2rem;
+    }
+
+    .festival-content h2{
+
+        font-size:3rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="kicker">
+Nota de Premsa · 4 de juny de 2026
+</div>
+
+<h1>
+Segona Oportunitat
+</h1>
+
+<p>
+La nova aposta valenciana de Llavors i Groteska arriba
+al Festival Internacional de Cinema Fantàstic de Catalunya.
+</p>
+
+</div>
+
+</header>
+
+<main class="article">
+
+<div class="meta">
+<span>València</span>
+<span>4 de juny de 2026</span>
+<span>Estrena Oficial</span>
+</div>
+
+<div class="content-grid">
+
+<div class="article-body">
+
+<p>
+El Festival Internacional de Cinema Fantàstic de Catalunya,
+Sitges, acollirà l'estrena de Segona Oportunitat,
+el nou curtmetratge dirigit per Candela Samper.
+</p>
+
+<p>
+La producció, resultat de la col·laboració entre
+Llavors i Groteska, es presenta com una de les
+propostes valencianes més singulars de la temporada,
+apostant per una experiència narrativa capaç de
+traspassar la pantalla.
+</p>
+
+<div class="pullquote">
+«Transformar espais quotidians
+en escenaris d'horror real.»
+</div>
+
+<p>
+Amb producció executiva d'Alba Aguilar
+i les interpretacions d'Ivan Huerta i Carmen Llorens,
+el projecte destaca tant pel seu plantejament argumental
+com per una estratègia promocional que juga amb els límits
+entre ficció i realitat.
+</p>
+
+<div class="festival-section">
+
+    <div class="festival-poster">
+        <img src="../img/cartel_FINAL_REAL.png"
+             alt="Cartell oficial de Segona Oportunitat">
+    </div>
+
+    <div class="festival-content">
+
+        <span class="festival-label">
+            Selecció Oficial
+        </span>
+
+        <h2>Sitges 2026</h2>
+
+        <p>
+        L'arribada del curtmetratge a Sitges suposa una fita
+        important dins del seu recorregut per festivals i
+        consolida la projecció de nous talents valencians
+        en l'àmbit cinematogràfic estatal.
+        </p>
+
+    </div>
+
+</div>
+<p>
+El projecte reflecteix la filosofia de Llavors,
+una productora orientada al desenvolupament de
+creadors emergents, proporcionant suport tècnic
+i creatiu durant totes les fases de producció.
+</p>
+
+<p>
+La combinació entre innovació narrativa,
+experimentació formal i una clara aposta pel talent jove
+ha convertit aquesta producció en una mostra del potencial
+actual del cinema valencià contemporani.
+</p>
+
+<div class="footer-contact">
+
+<h3>Contacte de premsa</h3>
+
+<p>
+Ferran Talens Santos<br>
+llavorsfilms@gmail.com<br>
+717 710 631
+</p>
+
+</div>
+
+</div>
+
+<aside class="sidebar">
+
+<div class="card">
+
+<h3>Fitxa tècnica</h3>
+
+<div class="data">
+<strong>Direcció</strong>
+Candela Samper
+</div>
+
+<div class="data">
+<strong>Producció executiva</strong>
+Alba Aguilar
+</div>
+
+<div class="data">
+<strong>Interpretació</strong>
+Ivan Huerta<br>
+Carmen Llorens
+</div>
+
+</div>
+
+<div class="card">
+
+<h3>Producció</h3>
+
+<p>
+Llavors<br>
+Groteska
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>Festival</h3>
+
+<p>
+Festival Internacional de Cinema Fantàstic
+de Catalunya · Sitges
+</p>
+
+</div>
+
+</aside>
+
+</div>
+
+</main>
+
+</body>
+</html>
+```
