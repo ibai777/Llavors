@@ -1,0 +1,397 @@
+```html
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Llavors — Productora Audiovisual</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --primary:#1f3a34;
+    --secondary:#6e847d;
+    --accent:#c9a66b;
+    --light:#f7f7f5;
+    --white:#ffffff;
+    --text:#2d2d2d;
+    --max-width:1200px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--light);
+    color:var(--text);
+    line-height:1.7;
+}
+
+.container{
+    width:90%;
+    max-width:var(--max-width);
+    margin:auto;
+}
+
+/* NAV */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(247,247,245,.92);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.nav-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1.2rem 0;
+}
+
+.logo{
+    font-size:1.1rem;
+    font-weight:700;
+    letter-spacing:2px;
+    color:var(--primary);
+}
+
+.nav-links{
+    display:flex;
+    gap:2rem;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:var(--primary);
+    font-size:.95rem;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--accent);
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(rgba(31,58,52,.55),rgba(31,58,52,.55)),
+    url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1800&q=80');
+    background-size:cover;
+    background-position:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero h1{
+    font-size:clamp(3rem,8vw,6rem);
+    font-weight:700;
+    margin-bottom:1rem;
+}
+
+.hero p{
+    font-size:1.3rem;
+    font-weight:300;
+    max-width:650px;
+}
+
+.hero-tag{
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:.85rem;
+    margin-bottom:1rem;
+    opacity:.8;
+}
+
+/* SECTIONS */
+
+section{
+    padding:120px 0;
+}
+
+.section-title{
+    font-size:2.8rem;
+    color:var(--primary);
+    margin-bottom:2rem;
+    font-weight:600;
+}
+
+.lead{
+    font-size:1.2rem;
+    max-width:800px;
+    color:#555;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:2rem;
+    margin-top:4rem;
+}
+
+.card{
+    background:white;
+    padding:2rem;
+    border-radius:12px;
+    box-shadow:0 10px 30px rgba(0,0,0,.04);
+}
+
+.card h3{
+    margin-bottom:1rem;
+    color:var(--primary);
+}
+
+/* MANIFESTO */
+
+.manifesto{
+    background:white;
+}
+
+.quote{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    font-size:2rem;
+    font-weight:300;
+    color:var(--primary);
+}
+
+/* CTA */
+
+.cta{
+    background:var(--primary);
+    color:white;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:3rem;
+    margin-bottom:1rem;
+}
+
+.cta p{
+    max-width:700px;
+    margin:auto;
+    margin-bottom:2rem;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 32px;
+    border:1px solid white;
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:white;
+    color:var(--primary);
+}
+
+/* FOOTER */
+
+footer{
+    padding:3rem 0;
+    text-align:center;
+    color:#777;
+    background:#fafafa;
+}
+
+@media(max-width:768px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero p{
+        font-size:1.1rem;
+    }
+
+    .quote{
+        font-size:1.5rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container nav-content">
+<a href="#header"><div class="logo"><img src="../img/llavors-letra.png" style="width: 150px"></div></a>
+
+<div class="nav-links">
+<a href="#qui">Qui som</a>
+<a href="#valors">Valors</a>
+<a href="#projectes">Projectes</a>
+<a href="#contacte">Contacte</a>
+</div>
+</div>
+</nav>
+
+<header class="hero" id="header">
+<div class="container hero-content">
+
+<div class="hero-tag">
+Productora Audiovisual
+</div>
+
+<h1>Comencem a sembrar.</h1>
+
+<p>
+Cada gran història naix d'una idea menuda.
+A Llavors cuidem cada projecte des de la primera
+espurna creativa fins al resultat final.
+</p>
+
+</div>
+</header>
+
+<section id="qui">
+<div class="container">
+
+<h2 class="section-title">Qui som</h2>
+
+<p class="lead">
+Llavors és una productora audiovisual nascuda de la passió
+per la narrativa visual. Creiem que les històries tenen el
+poder de connectar persones, generar emocions i transformar
+idees en experiències memorables.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Guió</h3>
+<p>
+Treballem les idees des de l'origen,
+construint relats sòlids amb una identitat pròpia.
+</p>
+</div>
+
+<div class="card">
+<h3>Producció</h3>
+<p>
+Coordinem cada fase del procés creatiu
+amb una mirada professional i flexible.
+</p>
+</div>
+
+<div class="card">
+<h3>Postproducció</h3>
+<p>
+Donem forma definitiva a cada projecte
+mitjançant un muntatge cuidat i coherent.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="manifesto">
+
+<div class="container">
+
+<div class="quote">
+“Qualsevol gran història comença amb una llavor.
+El nostre treball és ajudar-la a créixer.”
+</div>
+
+</div>
+
+</section>
+
+<section id="valors">
+
+<div class="container">
+
+<h2 class="section-title">La nostra mirada</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Experimentació</h3>
+<p>
+Busquem noves formes de contar històries i explorar llenguatges visuals.
+</p>
+</div>
+
+<div class="card">
+<h3>Qualitat tècnica</h3>
+<p>
+Cada decisió creativa està recolzada per una execució rigorosa.
+</p>
+</div>
+
+<div class="card">
+<h3>Connexió amb el públic</h3>
+<p>
+Creem projectes pensats per emocionar, reflexionar i perdurar.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="projectes">
+
+<div class="container">
+
+<h2 class="section-title">Projectes en desenvolupament</h2>
+
+<p class="lead">
+Ja hem començat a treballar en les nostres primeres produccions.
+Aquest espai serà el punt de trobada on compartirem processos,
+reptes i tot allò que ocorre darrere de la càmera.
+</p>
+
+</div>
+
+</section>
+
+<section id="contacte" class="cta">
+
+<div class="container">
+
+<h2>La sembra acaba de començar</h2>
+
+<p>
+Acompanyeu-nos en aquest viatge creatiu.
+Cada projecte és una oportunitat per fer créixer una nova història.
+</p>
+
+<a href="../contact.html" class="btn">Contactar</a>
+
+</div>
+
+</section>
+
+<footer>
+<div class="container">
+© 2026 Llavors · Productora Audiovisual
+</div>
+</footer>
+
+</body>
+</html>
+```
