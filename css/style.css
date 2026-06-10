@@ -9728,6 +9728,27 @@ h6,
 }
 
 .page-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/foto equipo.jpg), no-repeat center center;
+  background-size: cover;
+  background-size: cover;
+}
+
+.page-header-proyectos {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-2.jpg), no-repeat center center;
+  background-size: cover;
+}
+
+.page-header-equipo {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-2.jpg), no-repeat center center;
+  background-size: cover;
+}
+
+.page-header-servicios {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-2.jpg), no-repeat center center;
+  background-size: cover;
+}
+
+.page-header-blog {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-2.jpg), no-repeat center center;
   background-size: cover;
 }
